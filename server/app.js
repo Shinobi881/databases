@@ -1,6 +1,7 @@
 var express = require('express');
 var db = require('./db');
 
+
 // Middleware
 var morgan = require('morgan');
 var parser = require('body-parser');
@@ -12,6 +13,7 @@ var handler = require('./request-handler.js');
 var app = express();
 module.exports.app = app;
 
+var connection = require('./db/index.js');
 // Set what we are listening on.
 app.set("port", 3000);
 
