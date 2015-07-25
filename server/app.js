@@ -7,6 +7,7 @@ var parser = require('body-parser');
 
 // Router
 var router = require('./routes.js');
+var handler = require('./request-handler.js');
 
 var app = express();
 module.exports.app = app;
