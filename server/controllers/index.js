@@ -5,15 +5,24 @@ module.exports = {
   messages: {
 
     get: function (req, res) {
+      models.messages.get(function(data){ 
+        res.json(data);
+      });
       
     }, 
     
     post: function (req, res) {
-      var username = data.username;
-      var message = data.message;
-      var roomname = req.body.roomname;
-        models.messages.post(req.body, function(err, rows) {
-          
+      var message = { 
+        username : req.body.username,
+        text     : req.body.text,
+        roomname : req.body.roomname
+      };
+      
+        models.messages.post(message, function(err, result) {
+          if(err){
+            console.log('Post', err);
+          }
+          res.json(result);
         });
      
     },

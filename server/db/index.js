@@ -1,7 +1,5 @@
 var mysql = require('mysql'); // Mysql include
 
-
-
 var dbConnection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -10,11 +8,6 @@ var dbConnection = mysql.createConnection({
 });
 
 dbConnection.connect();
-// model.messages.post(request);
-
-
-
-
 
 module.exports = dbConnection;
 
