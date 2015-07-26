@@ -6,6 +6,7 @@ module.exports = {
 
     get: function (req, res) {
       models.messages.get(function(data){ 
+        console.log(data);
         res.json(data);
       });
       
